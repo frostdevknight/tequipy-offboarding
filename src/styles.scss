@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #ffbd75;
+  --color-primary-dark: #ff9632;
+  --color-surface: #4a4a4a;
+
+  --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+}
+
+body {
+  background: var(--color-surface);
+  margin: 0;
+}
