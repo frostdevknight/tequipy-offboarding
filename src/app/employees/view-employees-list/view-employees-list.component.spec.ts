@@ -10,7 +10,7 @@ describe('ViewEmployeesListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ViewEmployeesListComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ViewEmployeesListComponent);
     component = fixture.componentInstance;

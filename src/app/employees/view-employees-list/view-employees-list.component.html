@@ -1,1 +1,34 @@
-<p>view-employees-list works!</p>
+<h1 class="heading">Offboarding</h1>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+<mat-tab class="tab" label="Employees">
+  <table mat-table matSort [dataSource]="employees">
+    <ng-container matColumnDef="name" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by full name">Full Name</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by email">Email</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef>Department</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.department }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="equipments">
+      <th mat-header-cell *matHeaderCellDef>Equipment</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.equipments.lenght ? employee.equipments : '-' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let employee">{{ employee.status }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr (click)="redirectToEmployee(row.id)" mat-row *matRowDef="let row; columns: displayedColumns" class="table__row"></tr>
+  </table>
+</mat-tab>
+</mat-tab-group>
