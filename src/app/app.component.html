@@ -1,9 +1,11 @@
 <nav class="navbar">
-  <img src="https://tequipy.com/img/logo/tequipy_logo.png" alt="Tequipy Logo" class="navbar__logo">
+  <a routerLink="/">
+    <img src="https://tequipy.com/img/logo/tequipy_logo.png" alt="Tequipy Logo" class="navbar__logo">
+  </a>
 </nav>
 <main class="main">
   <div class="content">
+    <router-outlet />
   </div>
 </main>
 
-<router-outlet />
