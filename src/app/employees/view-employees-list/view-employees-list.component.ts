@@ -29,7 +29,7 @@ export class ViewEmployeesListComponent implements AfterViewInit {
       id: '2',
       name: "ADominik Tarkiewicz",
       department: "IT",
-      email: "dominik.tarkiewicz@gmail.com",
+      email: "aominik.tarkiewicz@gmail.com",
       status: "ACTIVE",
       equipments: []
     },
@@ -37,14 +37,18 @@ export class ViewEmployeesListComponent implements AfterViewInit {
       id: '3',
       name: "BDominik Tarkiewicz",
       department: "IT",
-      email: "dominik.tarkiewicz@gmail.com",
-      status: "ACTIVE",
+      email: "bominik.tarkiewicz@gmail.com",
+      status: "OFFBOARDED",
       equipments: []
     }]);
 
   displayedColumns: string[] = ['name', 'email', 'department', 'equipments', 'status'];
 
   constructor(private router: Router) { }
+
+  applyFilter(filterValue: string) {
+    this.employees.filter = filterValue.trim().toLowerCase();
+  }
 
   redirectToEmployee(id: string) {
     this.router.navigate(['/employee', id]);
