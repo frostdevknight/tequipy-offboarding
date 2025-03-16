@@ -4,13 +4,15 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { EmployeesService, OffboardData } from '../employees.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offboarding-dialog-form',
   templateUrl: './offboarding-dialog-form.component.html',
   styleUrls: ['./offboarding-dialog-form.component.scss'],
-  imports: [ReactiveFormsModule, MatDialogModule, MatInputModule, MatFormFieldModule]
+  imports: [ReactiveFormsModule, MatDialogModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule]
 })
 export class OffboardingDialogFormComponent implements OnInit {
   offboardForm!: FormGroup;
@@ -30,6 +32,7 @@ export class OffboardingDialogFormComponent implements OnInit {
         streetLine1: ['', Validators.required],
         city: ['', Validators.required],
         country: ['', Validators.required],
+        postalCode: ['', Validators.required],
       }),
       notes: [''],
       phone: ['', Validators.required],

@@ -1,7 +1,12 @@
+<mat-dialog-actions class="actions" align="end">
+  <button mat-icon-button>
+    <mat-icon mat-dialog-close aria-hidden="false" aria-label="Close modal">close</mat-icon>
+  </button>
+</mat-dialog-actions>
 <mat-dialog-content>
   <form [formGroup]="offboardForm" (ngSubmit)="onSubmit()">
     <mat-form-field formGroupName="address" appearance="outline">
-      <mat-label>Receiver"</mat-label>
+      <mat-label>Receiver</mat-label>
       <input id="receiver" formControlName="receiver" type="text" matInput>
     </mat-form-field>
 
@@ -21,10 +26,16 @@
         <input id="streetLine1" formControlName="streetLine1" type="text" matInput>
       </mat-form-field>
 
+    <div class="address">
       <mat-form-field appearance="outline">
         <mat-label>City</mat-label>
         <input id="city" formControlName="city" type="text" matInput>
       </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Postal code</mat-label>
+        <input id="postalCode" formControlName="postalCode" type="text" matInput>
+      </mat-form-field>
+    </div>
 
       <mat-form-field appearance="outline">
         <mat-label>Country</mat-label>
@@ -32,15 +43,13 @@
       </mat-form-field>
     </div>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Textarea</mat-label>
       <textarea matInput></textarea>
     </mat-form-field>
-
-    <button>Submit</button>
   </form>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
+<mat-dialog-actions class="actions actions--space" >
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button (click)="onSubmit()" mat-flat-button cdkFocusInitial>Confirm</button>
 </mat-dialog-actions>
