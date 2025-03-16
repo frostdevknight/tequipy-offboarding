@@ -53,3 +53,8 @@
 .icon {
   color: var(--color-primary);
 }
+
+.eq-name:not(:last-child)::after {
+  content: ",";
+  margin-right: 0.5rem;
+}
