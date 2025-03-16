@@ -1,7 +1,9 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { Employee } from '../employees.service';
 
 import { Router } from '@angular/router';
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-employees-list',
-  imports: [MatTableModule, MatSortModule, MatTabsModule],
+  imports: [MatTableModule, MatSortModule, MatInputModule, MatFormFieldModule, MatIconModule],
   templateUrl: './view-employees-list.component.html',
   styleUrl: './view-employees-list.component.scss'
 })
