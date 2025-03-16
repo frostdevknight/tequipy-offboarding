@@ -26,7 +26,14 @@
 
     <ng-container matColumnDef="equipments">
       <th mat-header-cell *matHeaderCellDef>Equipment</th>
-      <td mat-cell *matCellDef="let employee">{{ employee.equipments.lenght ? employee.equipments : '-' }}</td>
+      <td mat-cell *matCellDef="let employee">
+        @for (eq of employee.equipments; track eq.id) {
+          <span class="eq-name">{{ eq.name }}</span>
+        }
+        @if (employee.equipments.length === 0) {
+        <span class="eq-name">-</span>
+        }
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="status">
