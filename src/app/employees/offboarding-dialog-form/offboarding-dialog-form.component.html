@@ -1,0 +1,46 @@
+<mat-dialog-content>
+  <form [formGroup]="offboardForm" (ngSubmit)="onSubmit()">
+    <mat-form-field formGroupName="address" appearance="outline">
+      <mat-label>Receiver"</mat-label>
+      <input id="receiver" formControlName="receiver" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input id="email" formControlName="email" type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input id="phone" formControlName="phone" type="text" matInput>
+    </mat-form-field>
+
+    <div formGroupName="address">
+      <mat-form-field appearance="outline">
+        <mat-label>Street line</mat-label>
+        <input id="streetLine1" formControlName="streetLine1" type="text" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input id="city" formControlName="city" type="text" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <input id="country" formControlName="country" type="text" matInput>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Textarea</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+    <button>Submit</button>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

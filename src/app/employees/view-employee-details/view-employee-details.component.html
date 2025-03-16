@@ -20,8 +20,5 @@
   } @else {
   <p>No equipment</p>
  }
-
-    <button mat-flat-button color="primary" (click)="offboardEmployee($event)" [disabled]="employee.status === 'OFFBOARDED'">
-      Offboard Employee
-    </button>
+  <app-offboarding-dialog [id]="id()" [employee]="employee"/>
 }

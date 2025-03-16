@@ -1,29 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { Employee, EmployeesService } from '../employees.service';
 import { MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { OffboardingDialogComponent } from '../offboarding-dialog/offboarding-dialog.component';
+
 
 @Component({
   selector: 'app-view-employee-details',
-  imports: [MatTableModule, MatButtonModule, RouterLink],
+  imports: [MatTableModule, RouterLink, OffboardingDialogComponent],
   templateUrl: './view-employee-details.component.html',
   styleUrl: './view-employee-details.component.scss'
 })
 export class ViewEmployeeDetailsComponent implements OnInit {
   employee?: Employee;
-  constructor(private employeesService: EmployeesService, private route: ActivatedRoute) {
+  id = input.required<string>();
 
-  }
+  constructor(private employeesService: EmployeesService) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.employeesService.getEmployeeById(id!).subscribe(emp => {
+    this.employeesService.getEmployeeById(this.id()).subscribe(emp => {
       this.employee = emp;
     });
-  }
-
-  offboardEmployee(event: Event) {
-    alert('Offboarding employee with id: ' + event);
   }
 }

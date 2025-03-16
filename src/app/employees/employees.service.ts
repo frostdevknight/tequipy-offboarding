@@ -20,13 +20,14 @@ export interface Employee {
 export interface OffboardData {
   address: {
     streetLine1: string;
+    receiver: string;
+    city: string;
     country: string;
     postalCode: string;
-    receiver: string;
   };
+  email: string;
   notes: string;
   phone: string;
-  email: string;
 }
 
 @Injectable({
@@ -39,6 +40,10 @@ export class EmployeesService {
   constructor(private http: HttpClient) { }
 
   loadEmployees() {
+    if (this.employeesSubject.value.length) {
+      return;
+    }
+
     this.http.get<Employee[]>('api/employees').subscribe(employees => {
       this.employeesSubject.next(employees);
     });
@@ -49,14 +54,12 @@ export class EmployeesService {
   }
 
   offboardEmployee(id: string, offboardData: OffboardData) {
-    return this.http.post(`api/users/${id}/offboard`, offboardData)
-      .pipe(
-        tap(() => {
-          const updatedEmployees = this.employeesSubject.value.map(emp =>
-            emp.id === id ? { ...emp, status: 'OFFBOARDED' } : emp
-          );
-          this.employeesSubject.next(updatedEmployees as Employee[]);
-        })
+    return this.http.post(`api/users/${id}/offboard`, offboardData).subscribe(() => {
+      console.log(id)
+      const updatedEmployees = this.employeesSubject.value.map(emp =>
+        emp.id === id ? { ...emp, status: 'OFFBOARDED' } : emp
       );
+      this.employeesSubject.next(updatedEmployees as Employee[]);
+    })
   }
 }
