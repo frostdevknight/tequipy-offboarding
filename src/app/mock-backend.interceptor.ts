@@ -15,6 +15,8 @@ import { Employee } from './employees/employees.service';
 @Injectable()
 export class MockBackendInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log(`%cSimulating %c${request.method} %crequest to %c${request.url}`, 'font-size: 1rem;', 'color: #fbba72; font-size: 1rem;', 'font-size: 1rem;', 'color: #fbba72; font-size: 1rem;');
+
     if (request.url.endsWith('/employees') && request.method === 'GET') {
       return of(new HttpResponse({ status: 200, body: employeesData })).pipe(delay(500));
     }
