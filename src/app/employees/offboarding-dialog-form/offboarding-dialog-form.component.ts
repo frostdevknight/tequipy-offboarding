@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { EmployeesService, OffboardData } from '../employees.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offboarding-dialog-form',
@@ -14,7 +15,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 export class OffboardingDialogFormComponent implements OnInit {
   offboardForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private empoyeesService: EmployeesService, @Inject(MAT_DIALOG_DATA) public data: { id: string }) { }
+  constructor(
+    private fb: FormBuilder,
+    private empoyeesService: EmployeesService,
+    private router: Router,
+    private dialogRef: MatDialogRef<OffboardingDialogFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { id: string }) { }
 
   ngOnInit(): void {
     this.offboardForm = this.fb.group({
@@ -35,6 +41,8 @@ export class OffboardingDialogFormComponent implements OnInit {
       console.log(this.data.id)
       const offboardData: OffboardData = this.offboardForm.value;
       this.empoyeesService.offboardEmployee(this.data.id, offboardData);
+      this.router.navigate(['/employees']);
+      this.dialogRef.close();
     }
   }
 }

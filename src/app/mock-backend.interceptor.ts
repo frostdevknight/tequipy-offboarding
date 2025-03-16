@@ -23,7 +23,8 @@ export class MockBackendInterceptor implements HttpInterceptor {
     }
 
     if (request.url.match(/\/employees\/.+$/) && request.method === 'GET') {
-      const employee = (this.mockServerState as Employee[]).find(e => e.id === request.url.split('/').pop());
+      const id = request.url.split('/').pop();
+      const employee = (this.mockServerState as Employee[]).find(e => e.id === id);
       return of(new HttpResponse({ status: 200, body: employee })).pipe(delay(500));
     }
 
