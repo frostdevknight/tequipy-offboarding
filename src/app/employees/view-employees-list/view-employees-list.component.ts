@@ -4,7 +4,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { Employee } from '../employees.service';
+import { Employee, EmployeesService } from '../employees.service';
 
 import { Router } from '@angular/router';
 
@@ -16,38 +16,16 @@ import { Router } from '@angular/router';
   styleUrl: './view-employees-list.component.scss'
 })
 export class ViewEmployeesListComponent implements AfterViewInit {
-  employees = new MatTableDataSource<Employee>([
-    {
-      id: '1',
-      name: "Dominik Tarkiewicz",
-      department: "IT",
-      email: "dominik.tarkiewicz@gmail.com",
-      status: "ACTIVE",
-      equipments: []
-    },
-    {
-      id: '2',
-      name: "ADominik Tarkiewicz",
-      department: "IT",
-      email: "aominik.tarkiewicz@gmail.com",
-      status: "ACTIVE",
-      equipments: []
-    },
-    {
-      id: '3',
-      name: "BDominik Tarkiewicz",
-      department: "IT",
-      email: "bominik.tarkiewicz@gmail.com",
-      status: "OFFBOARDED",
-      equipments: []
-    }]);
-
+  employees: MatTableDataSource<Employee>
   displayedColumns: string[] = ['name', 'email', 'department', 'equipments', 'status'];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private employeesService: EmployeesService) {
+    this.employees = new MatTableDataSource<Employee>([]);
+  }
 
-  applyFilter(filterValue: string) {
-    this.employees.filter = filterValue.trim().toLowerCase();
+  applyFilter(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.employees.filter = target.value.trim().toLowerCase();
   }
 
   redirectToEmployee(id: string) {
@@ -58,5 +36,11 @@ export class ViewEmployeesListComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.employees.sort = this.sort;
+
+    this.employeesService.employees$.subscribe(employees => {
+      this.employees.data = employees;
+    });
+
+    this.employeesService.loadEmployees();
   }
 }

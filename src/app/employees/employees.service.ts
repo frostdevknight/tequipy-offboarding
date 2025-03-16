@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 export interface Equipment {
   id: string;
@@ -38,11 +39,24 @@ export class EmployeesService {
   constructor(private http: HttpClient) { }
 
   loadEmployees() {
+    this.http.get<Employee[]>('api/employees').subscribe(employees => {
+      this.employeesSubject.next(employees);
+    });
   }
 
   getEmployeeById(id: string) {
+    return this.http.get<Employee>(`api/employees/${id}`);
   }
 
   offboardEmployee(id: string, offboardData: OffboardData) {
+    return this.http.post(`api/users/${id}/offboard`, offboardData)
+      .pipe(
+        tap(() => {
+          const updatedEmployees = this.employeesSubject.value.map(emp =>
+            emp.id === id ? { ...emp, status: 'OFFBOARDED' } : emp
+          );
+          this.employeesSubject.next(updatedEmployees as Employee[]);
+        })
+      );
   }
 }

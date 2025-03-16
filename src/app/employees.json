@@ -1,0 +1,246 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Johnson",
+    "department": "IT",
+    "email": "alice.johnson@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      },
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Bob Smith",
+    "department": "HR",
+    "email": "bob.smith@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Charlie Brown",
+    "department": "Finance",
+    "email": "charlie.brown@example.com",
+    "status": "OFFBOARDED",
+    "equipments": []
+  },
+  {
+    "id": "4",
+    "name": "David Wilson",
+    "department": "IT",
+    "email": "david.wilson@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Eve Davis",
+    "department": "Marketing",
+    "email": "eve.davis@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Frank Miller",
+    "department": "Sales",
+    "email": "frank.miller@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Grace Lee",
+    "department": "IT",
+    "email": "grace.lee@example.com",
+    "status": "OFFBOARDED",
+    "equipments": []
+  },
+  {
+    "id": "8",
+    "name": "Hank Green",
+    "department": "HR",
+    "email": "hank.green@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Ivy White",
+    "department": "Finance",
+    "email": "ivy.white@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Jack Black",
+    "department": "Marketing",
+    "email": "jack.black@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Karen Young",
+    "department": "Sales",
+    "email": "karen.young@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Leo King",
+    "department": "IT",
+    "email": "leo.king@example.com",
+    "status": "OFFBOARDED",
+    "equipments": []
+  },
+  {
+    "id": "13",
+    "name": "Mia Scott",
+    "department": "HR",
+    "email": "mia.scott@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Noah Clark",
+    "department": "Finance",
+    "email": "noah.clark@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Olivia Lewis",
+    "department": "Marketing",
+    "email": "olivia.lewis@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "Paul Walker",
+    "department": "Sales",
+    "email": "paul.walker@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Quinn Hall",
+    "department": "IT",
+    "email": "quinn.hall@example.com",
+    "status": "OFFBOARDED",
+    "equipments": []
+  },
+  {
+    "id": "18",
+    "name": "Rachel Adams",
+    "department": "HR",
+    "email": "rachel.adams@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Sam Harris",
+    "department": "Finance",
+    "email": "sam.harris@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "name": "Tina Turner",
+    "department": "Marketing",
+    "email": "tina.turner@example.com",
+    "status": "ACTIVE",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "MacBook M2"
+      }
+    ]
+  }
+]
