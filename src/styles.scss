@@ -1,19 +1,20 @@
 @use '@angular/material' as mat;
+@use 'theme-colors' as theme;
 
 :root {
+  --color-primary: #ffbd75;
+  --color-primary-dark: #ff9632;
+  --color-surface: #E3E6EC;
+  --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+
+  @include mat.theme((color: theme.$primary-palette,
+      typography: Roboto,
+      density: 0));
+
   @include mat.form-field-overrides((filled-container-shape: var(--mat-sys-corner-small),
       outlined-container-shape: var(--mat-sys-corner-small), container-vertical-padding: 1rem,
       container-height: 3rem,
       container-text-line-height: var(--mat-sys-body-medium-line-height)));
-
-
-  --color-primary: #ffbd75;
-  --color-primary-dark: #ff9632;
-  --color-surface: #E3E6EC;
-
-  --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
-
-  --mat-sys-primary: var(--color-primary);
 }
 
 html,
