@@ -6,6 +6,14 @@
   &--space {
     justify-content: space-between;
   }
+
+  h2 {
+    margin: 6px auto;
+  }
+
+  .close {
+    position: absolute;
+  }
 }
 
 mat-form-field {
