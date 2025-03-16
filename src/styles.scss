@@ -6,6 +6,7 @@
   --color-primary-dark: #ff9632;
   --color-surface: #E3E6EC;
   --gradient-primary: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  --container-padding: 60px 8rem 6rem 8rem;
 
   @include mat.theme((color: theme.$primary-palette,
       typography: Roboto,
@@ -15,6 +16,15 @@
       outlined-container-shape: var(--mat-sys-corner-small), container-vertical-padding: 1rem,
       container-height: 3rem,
       container-text-line-height: var(--mat-sys-body-medium-line-height)));
+
+
+  @media screen and (max-width: 1200px) {
+    --container-padding: 60px 5.25rem 6rem 5.25rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    --container-padding: 60px 1.75rem 6rem 1.75rem;
+  }
 }
 
 html,
