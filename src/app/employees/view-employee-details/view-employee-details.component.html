@@ -1,4 +1,6 @@
-@if (employee) {
+@if (!employee) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+} @else {
   <a class="link" mat-button routerLink="/employees">
     <mat-icon class="icon">arrow_back</mat-icon>
     Back
@@ -13,7 +15,7 @@
     <h2>Employee details</h2>
     <p><strong>Department:</strong> {{ employee.department }}</p>
     <p><strong>Email:</strong> {{ employee.email }}</p>
-    <p><strong>Status:</strong> {{ employee.status }}</p>
+    <p><strong>Status:</strong><span [class]="employee.status"> {{ employee.status }} </span></p>
   </div>
 
   <h2 class="eq-header">Equipments</h2>

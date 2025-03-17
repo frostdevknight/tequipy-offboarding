@@ -5,11 +5,12 @@ import { RouterLink } from '@angular/router';
 import { OffboardingDialogComponent } from '../offboarding-dialog/offboarding-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @Component({
   selector: 'app-view-employee-details',
-  imports: [MatTableModule, RouterLink, OffboardingDialogComponent, MatButtonModule, MatIconModule],
+  imports: [MatTableModule, RouterLink, OffboardingDialogComponent, MatButtonModule, MatIconModule, MatProgressBarModule],
   templateUrl: './view-employee-details.component.html',
   styleUrl: './view-employee-details.component.scss'
 })

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 export interface Equipment {
   id: string;
@@ -39,12 +38,12 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) { }
 
-  loadEmployees() {
+  async loadEmployees() {
     if (this.employeesSubject.value.length) {
       return;
     }
 
-    this.http.get<Employee[]>('api/employees').subscribe(employees => {
+    return this.http.get<Employee[]>('api/employees').subscribe(employees => {
       this.employeesSubject.next(employees);
     });
   }

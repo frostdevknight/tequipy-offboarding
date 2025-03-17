@@ -57,3 +57,11 @@
   content: ",";
   margin-right: 0.5rem;
 }
+
+.ACTIVE {
+  color: var(--color-success);
+}
+
+.OFFBOARDED {
+  color: var(--mat-sys-error);
+}
