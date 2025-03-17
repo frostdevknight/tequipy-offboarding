@@ -1,6 +1,22 @@
 # TequipyOffboarding
 
+## Project description
+
+Employee offboarding application prototype for Tequipy. This prototype is designed to help manage the offboarding process for employees leaving the company.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+
+## Asumptions
+
+There will always be some employees in the system. The system will not be empty.
+
+The server will always be available.
+
+The system is secure and only authorized users can access it.
+
+The user will be using the latest version of Google Chrome.
+
+The user will have access to the internet at all times.
 
 ## Development server
 
